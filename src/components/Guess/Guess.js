@@ -7,7 +7,7 @@ function Guess({ value, answer }) {
   return (
     <p className="guess">
       {range(5).map((index) => (
-        <span key={index} className={`cell ${checked?.[index].status}`}>
+        <span key={index} className={`cell ${checked?.[index].status ?? ""}`}>
           {checked?.[index].letter}
         </span>
       ))}
