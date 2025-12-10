@@ -3,8 +3,11 @@ function GameOutcome({ status, guesses, answer }) {
     <div className={`${status === "won" ? "happy" : "sad"} banner`}>
       {status === "won" ? (
         <p>
-          <strong>Congratulations!</strong> Got it in
-          <strong>{guesses.length} guesses</strong>.
+          <strong>Congratulations!</strong> Got it in{" "}
+          <strong>
+            {guesses.length} {guesses.length === 1 ? "guess" : "guesses"}
+          </strong>
+          .
         </p>
       ) : (
         <p>
