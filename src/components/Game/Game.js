@@ -1,6 +1,7 @@
-import React from "react";
+import { useState } from "react";
 
 import GuessInput from "../GuessInput";
+import GuessList from "../GuessList";
 import { sample } from "../../utils";
 import { WORDS } from "../../data";
 
@@ -10,9 +11,18 @@ const answer = sample(WORDS);
 console.info({ answer });
 
 function Game() {
+  const [guesses, setGuesses] = useState([]);
+
   return (
     <>
-      <GuessInput />
+      <GuessList guesses={guesses} />
+      <GuessInput
+        onSubmit={(guess) =>
+          setGuesses(
+            guesses.concat([{ id: crypto.randomUUID(), label: guess }]),
+          )
+        }
+      />
     </>
   );
 }
