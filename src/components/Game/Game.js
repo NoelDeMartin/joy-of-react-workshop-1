@@ -16,13 +16,7 @@ function Game() {
   return (
     <>
       <GuessList guesses={guesses} />
-      <GuessInput
-        onSubmit={(guess) =>
-          setGuesses(
-            guesses.concat([{ id: crypto.randomUUID(), value: guess }]),
-          )
-        }
-      />
+      <GuessInput onSubmit={(guess) => setGuesses(guesses.concat([guess]))} />
     </>
   );
 }
