@@ -19,7 +19,7 @@ function Game() {
       <GuessInput
         onSubmit={(guess) =>
           setGuesses(
-            guesses.concat([{ id: crypto.randomUUID(), label: guess }]),
+            guesses.concat([{ id: crypto.randomUUID(), value: guess }]),
           )
         }
       />
